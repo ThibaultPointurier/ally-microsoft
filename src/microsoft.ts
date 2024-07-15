@@ -3,9 +3,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 import { MicrosoftDriverConfig, MicrosoftScopes, MicrosoftToken } from './types/main.js'
 import type { ApiRequestContract, RedirectRequestContract } from '@adonisjs/ally/types'
 
-export class MicrosoftDriver
-  extends Oauth2Driver<MicrosoftToken, MicrosoftScopes>
-{
+export class MicrosoftDriver extends Oauth2Driver<MicrosoftToken, MicrosoftScopes> {
   protected authorizeUrl = 'https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize'
 
   protected accessTokenUrl = 'https://login.microsoftonline.com/consumers/oauth2/v2.0/token'
@@ -36,7 +34,6 @@ export class MicrosoftDriver
   protected configureRedirectRequest(request: RedirectRequestContract<MicrosoftScopes>) {
     request.scopes(this.config.scopes || ['openid'])
     request.param('response_type', 'code')
-
   }
 
   protected configureAccessTokenRequest(request: ApiRequest): void {
@@ -69,7 +66,7 @@ export class MicrosoftDriver
     const user = await this.getUserInfo(accessToken.token, callback)
     return {
       ...user,
-      token: accessToken
+      token: accessToken,
     }
   }
 
@@ -103,7 +100,7 @@ export class MicrosoftDriver
       email: response.email,
       avatarUrl: response.picture,
       emailVerificationState: 'unsupported' as const,
-      original: response
+      original: response,
     }
   }
 

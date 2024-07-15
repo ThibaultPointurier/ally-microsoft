@@ -1,11 +1,11 @@
 {
   "name": "@tpointurier/ally-microsoft",
   "description": "An ally driver for Microsoft",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "build/index.js",
   "type": "module",
   "files": [
-    "build",
+    "build"
   ],
   "scripts": {
     "prepublishOnly": "npm run build",
