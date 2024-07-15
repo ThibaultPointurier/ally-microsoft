@@ -1,44 +1,66 @@
 {
-  "name": "ally-custom-service",
-  "description": "Starter kit to create an Ally driver for an OAuth2 service",
-  "version": "0.0.0",
-  "main": "index.js",
+  "name": "@tpointurier/ally-microsoft",
+  "description": "An ally driver for Microsoft",
+  "version": "0.0.1",
+  "main": "build/index.js",
   "type": "module",
   "files": [
-    "build/index.js",
-    "build/index.d.ts",
-    "build/src"
+    "build",
   ],
   "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "npm run compile",
+    "clean": "del-cli build",
+    "compile": "npm run clean && tsc",
     "lint": "eslint . --ext=.ts",
-    "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
-    "pretest": "npm run lint",
-    "build": "tsc"
+    "release": "np",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@poppinss/utils": "^6.7.1"
   },
   "devDependencies": {
-    "@adonisjs/ally": "^5.0.0-7",
-    "@adonisjs/core": "^6.1.5-32",
-    "@adonisjs/eslint-config": "^1.3.0",
-    "@adonisjs/prettier-config": "^1.3.0",
-    "@adonisjs/tsconfig": "^1.3.0",
-    "@swc/core": "^1.6.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "@adonisjs/assembler": "^7.1.0",
+    "@adonisjs/core": "^6.2.1",
+    "@adonisjs/eslint-config": "^1.2.1",
+    "@adonisjs/prettier-config": "^1.2.1",
+    "@adonisjs/tsconfig": "^1.2.1",
+    "@types/node": "^20.11.6",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-adonis": "^3.0.3",
+    "eslint-plugin-prettier": "^5.1.3",
+    "np": "^9.2.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@adonisjs/ally": "^5.0.0-7",
-    "@adonisjs/core": "^6.1.5-32"
+    "@adonisjs/ally": "^5.0.2",
+    "@adonisjs/core": "^6.2.1"
   },
-  "author": "",
+  "author": "Thibault Pointurier <thibault.pointurier.pro@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "social-auth",
-    "adonisjs-ally",
-    "adonisjs"
+    "ally",
+    "microsoft",
+    "adonis",
+    "adonisjs",
+    "oauth2",
+    "social-auth"
   ],
+  "prettier": "@adonisjs/prettier-config",
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/package"
   },
-  "prettier": "@adonisjs/prettier-config"
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "np": {
+    "message": "chore(release): %s",
+    "tag": "latest",
+    "branch": "main",
+    "anyBranch": false
+  }
 }
