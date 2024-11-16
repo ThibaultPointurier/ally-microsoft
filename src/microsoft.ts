@@ -8,7 +8,7 @@ export class MicrosoftDriver extends Oauth2Driver<MicrosoftToken, MicrosoftScope
 
   protected accessTokenUrl = 'https://login.microsoftonline.com/consumers/oauth2/v2.0/token'
 
-  protected userInfoUrl = 'https://graph.microsoft.com/oidc/userinfo'
+  protected userInfoUrl = 'https://graph.microsoft.com/v1.0/me'
 
   protected codeParamName = 'code'
 
