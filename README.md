@@ -26,7 +26,8 @@ Validate environment variables
 ```ts
 MICROSOFT_CLIENT_ID: 'Env.schema.string()',
 MICROSOFT_CLIENT_SECRET: 'Env.schema.string()',
-MICROSOFT_CALLBACK_URL: 'Env.schema.string()',
+MICROSOFT_CALLBACK_URL: 'Env.schema.string()', 
+MICROSOFT_TENANT_ID: 'Env.schema.string.optional()',
 ```
 
 ### 4. Add Variables to Your Ally Configuration
@@ -39,6 +40,7 @@ const allyConfig: AllyConfig = {
     clientSecret: env.get('MICROSOFT_CLIENT_SECRET'),
     callbackUrl: env.get('MICROSOFT_CALLBACK_URL'),
     scopes: ['openid', 'profile', 'email'],
+    tenantId: env.get('MICROSOFT_TENANT_ID', 'common'),
   }),
 }
 ```

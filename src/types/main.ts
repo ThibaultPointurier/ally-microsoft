@@ -11,6 +11,7 @@ export interface MicrosoftDriverContract
 
 export type MicrosoftDriverConfig = Oauth2DriverConfig & {
   scopes?: LiteralStringUnion<MicrosoftScopes>[]
+  tenantId?: string
 }
 
 export type MicrosoftToken = {

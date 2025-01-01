@@ -4,9 +4,8 @@ import { MicrosoftDriverConfig, MicrosoftScopes, MicrosoftToken } from './types/
 import type { ApiRequestContract, RedirectRequestContract } from '@adonisjs/ally/types'
 
 export class MicrosoftDriver extends Oauth2Driver<MicrosoftToken, MicrosoftScopes> {
-  protected authorizeUrl = 'https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize'
-
-  protected accessTokenUrl = 'https://login.microsoftonline.com/consumers/oauth2/v2.0/token'
+  protected authorizeUrl: string
+  protected accessTokenUrl: string
 
   protected userInfoUrl = 'https://graph.microsoft.com/v1.0/me'
 
@@ -27,6 +26,11 @@ export class MicrosoftDriver extends Oauth2Driver<MicrosoftToken, MicrosoftScope
     public config: MicrosoftDriverConfig
   ) {
     super(ctx, config)
+
+    const tenantId = this.config.tenantId || 'common'
+
+    this.authorizeUrl = `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/authorize`
+    this.accessTokenUrl = `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`
 
     this.loadState()
   }
