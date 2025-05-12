@@ -30,6 +30,8 @@ node ace add @tpointurier/ally-microsoft
 Then register the service inside the configuration file `config/ally.ts`.
 
 ```ts
+import { microsoft } from '@tpointurier/ally-microsoft'
+
 const allyConfig: AllyConfig = {
   microsoft: microsoft({
     clientId: env.get('MICROSOFT_CLIENT_ID'),
@@ -40,3 +42,25 @@ const allyConfig: AllyConfig = {
   }),
 }
 ```
+
+## Available Scopes
+
+Microsoft OAuth2 supports various scopes that you can use to request different levels of access. Here are some commonly used scopes:
+
+- `openid`: Required for OpenID Connect authentication
+- `profile`: Access to basic profile information
+- `email`: Access to email address
+- `offline_access`: Get a refresh token
+- `User.Read`: Read user profile
+- `User.Read.All`: Read all users' basic profiles
+- `Mail.Read`: Read user's email
+- `Calendars.Read`: Read user's calendars
+- `Files.Read`: Read user's files
+
+You can add these scopes to the configuration like this:
+
+```ts
+scopes: ['openid', 'profile', 'email', 'User.Read']
+```
+
+For a complete list of available scopes, please refer to the [Microsoft Graph permissions reference](https://docs.microsoft.com/en-us/graph/permissions-reference).
