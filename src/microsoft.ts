@@ -96,16 +96,7 @@ export class MicrosoftDriver extends Oauth2Driver<MicrosoftToken, MicrosoftScope
       callback(request)
     }
 
-    const response = await request.get()
-    return {
-      id: response.sub,
-      name: response.givenname,
-      nickName: response.givenname,
-      email: response.email,
-      avatarUrl: response.picture,
-      emailVerificationState: 'unsupported' as const,
-      original: response,
-    }
+    return await request.get()
   }
 
   /**
