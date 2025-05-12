@@ -1,3 +1,5 @@
+export { stubsRoot } from './stubs/main.js'
+export { configure } from './configure.js'
 import { MicrosoftDriver } from './src/microsoft.js'
 import type { MicrosoftDriverConfig } from './src/types/main.js'
 import type { HttpContext } from '@adonisjs/core/http'
