@@ -4,6 +4,9 @@
   "version": "0.2.0",
   "main": "build/index.js",
   "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "files": [
     "build"
   ],
@@ -16,28 +19,24 @@
     "release": "np",
     "format": "prettier --write ."
   },
-  "dependencies": {
-    "@poppinss/utils": "^6.7.1"
-  },
   "devDependencies": {
-    "@adonisjs/assembler": "^7.1.0",
-    "@adonisjs/core": "^6.2.1",
-    "@adonisjs/eslint-config": "^1.2.1",
-    "@adonisjs/prettier-config": "^1.2.1",
-    "@adonisjs/tsconfig": "^1.2.1",
-    "@types/node": "^20.11.6",
-    "del-cli": "^5.1.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-adonis": "^3.0.3",
-    "eslint-plugin-prettier": "^5.1.3",
-    "np": "^9.2.0",
-    "prettier": "^3.2.4",
-    "typescript": "^5.2.2"
+    "@adonisjs/assembler": "^8.4.0",
+    "@adonisjs/core": "^7.3.3",
+    "@adonisjs/eslint-config": "^3.0.0",
+    "@adonisjs/prettier-config": "^1.4.5",
+    "@adonisjs/tsconfig": "^2.0.0",
+    "@types/node": "^25.9.1",
+    "del-cli": "^7.0.0",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "np": "^11.2.1",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
-    "@adonisjs/ally": "^5.0.2",
-    "@adonisjs/core": "^6.2.1"
+    "@adonisjs/ally": "^6.0.0",
+    "@adonisjs/core": "^7.0.0"
   },
   "author": "Thibault Pointurier <thibault.pointurier.pro@gmail.com>",
   "license": "MIT",
@@ -50,9 +49,6 @@
     "social-auth"
   ],
   "prettier": "@adonisjs/prettier-config",
-  "eslintConfig": {
-    "extends": "@adonisjs/eslint-config/package"
-  },
   "publishConfig": {
     "access": "public",
     "tag": "latest"

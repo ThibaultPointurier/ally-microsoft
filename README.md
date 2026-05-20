@@ -10,6 +10,11 @@
 
 `@tpointurier/ally-microsoft` is a Microsoft driver for [AdonisJS Ally](https://docs.adonisjs.com/guides/social-auth).
 
+## Version Compatibility
+
+- **v0.4.x**: Supports AdonisJS v7 only
+- **v0.3.x and below**: Supports AdonisJS v6 only
+
 ## Getting Started
 
 This package is available in the npm registry.

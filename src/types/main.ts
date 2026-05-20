@@ -4,8 +4,10 @@ import type {
   Oauth2DriverConfig,
 } from '@adonisjs/ally/types'
 
-export interface MicrosoftDriverContract
-  extends AllyDriverContract<MicrosoftToken, MicrosoftScopes> {
+export interface MicrosoftDriverContract extends AllyDriverContract<
+  MicrosoftToken,
+  MicrosoftScopes
+> {
   version: 'oauth2'
 }
 
